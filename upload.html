@@ -356,6 +356,28 @@
     });
 
     window.addEventListener('DOMContentLoaded', loadProductOptions);
+
+    // Import the functions you need from the SDKs you need
+import { initializeApp } from "firebase/app";
+import { getAnalytics } from "firebase/analytics";
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
+
+// Your web app's Firebase configuration
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+const firebaseConfig = {
+  apiKey: "AIzaSyAz8fsQ8nO_MW6aLFGY4QEXHjgmw0l5Hs0",
+  authDomain: "cabigasmarket.firebaseapp.com",
+  projectId: "cabigasmarket",
+  storageBucket: "cabigasmarket.firebasestorage.app",
+  messagingSenderId: "353482725894",
+  appId: "1:353482725894:web:8e4e5e4e7100fb9e40c187",
+  measurementId: "G-HLPKNFCS4J"
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const analytics = getAnalytics(app);
   </script>
 
 </body>
