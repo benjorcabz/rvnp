@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Posted Products</title>
+  <style>
+    .product-card {
+      border: 1px solid #ccc;
+      padding: 12px;
+      margin: 10px;
+      display: inline-block;
+      width: 250px;
+      vertical-align: top;
+    }
+    .product-card img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+      margin-bottom: 8px;
+    }
+    .product-card h3 {
+      margin: 0 0 6px;
+    }
+  </style>
+</head>
+<body>
+  <h1>📦 Posted Products</h1>
+  <div id="productList"></div>
+
+  <script>
+    const products = JSON.parse(localStorage.getItem('products')) || [];
+    const productList = document.getElementById('productList');
+
+    if (products.length === 0) {
+      productList.innerHTML = "<p>No products posted yet.</p>";
+    } else {
+      products.forEach(product => {
+        const card = document.createElement('div');
+        card.className = 'product-card';
+
+        card.innerHTML = `
+          <img src="${product.image}" alt="${product.name}">
+          <h3>${product.name}</h3>
+          <p><strong>Category:</strong> ${product.category}</p>
+          <p><strong>Description:</strong><br> ${product.desc}</p>
+          <p><strong>Price:</strong> ${product.currency} ${product.price}</p>
+        `;
+
+        productList.appendChild(card);
+      });
+    }
+  </script>
+</body>
+</html>
