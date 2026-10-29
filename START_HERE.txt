@@ -1,0 +1,16 @@
+BENJOR INVENTORY ONLINE - START HERE
+
+LOCAL WINDOWS SETUP
+1. Install Python 3.10 or newer from https://www.python.org/downloads/ (enable Add Python to PATH).
+2. Extract the benjor_inventory_online folder.
+3. Double-click run_windows.bat, or follow README.md for PowerShell commands.
+4. Open http://127.0.0.1:5000
+5. For a fresh local database, the initial login is:
+   Username: admin
+   Password: ChangeMe123!
+6. Change the bootstrap credentials before public deployment. Never use the default password on a live internet-facing system.
+
+INTERNET ACCESS
+The project files do not automatically create a public website. Deploy to a Python hosting provider, attach a managed PostgreSQL database, and configure SECRET_KEY, DATABASE_URL, INITIAL_ADMIN_USERNAME, and INITIAL_ADMIN_PASSWORD. Follow the detailed steps in README.md.
+
+The old BenjorInventory.py file is not modified, and no existing data is imported because a fresh database was requested.

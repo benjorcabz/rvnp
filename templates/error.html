@@ -1,0 +1,1 @@
+{% extends 'base.html' %}{% block title %}{{ code }} · Benjor Inventory{% endblock %}{% block content %}<div class="empty-state error-state"><div class="error-code">{{ code }}</div><h1>Something went wrong</h1><p>{{ message }}</p><a class="btn btn-primary" href="{{ url_for('dashboard') if current_user.is_authenticated else url_for('index') }}">Go back</a></div>{% endblock %}
